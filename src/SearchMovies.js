@@ -36,7 +36,7 @@ export default function SearchMovies() {
 
       <div className="card-list">
         {movies.filter(movie => movie.poster_path).map(movie => (
-          <div>
+          <div className="card" key={movie.id}>
             <img 
               className="card--image"
               src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${movie.poster_path}`}
@@ -49,7 +49,7 @@ export default function SearchMovies() {
               <p><small>RATING: {movie.vote_average}</small></p>
               <p className="card--desc">{movie.overview}</p>
             </div>
-            
+
           </div>
         ))}
       </div>
